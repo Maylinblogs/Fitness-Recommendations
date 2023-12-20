@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise and Diet Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        select, input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<h1>Patient Information Form</h1>
+
+<form id="patientForm" action="/process_patient_info" method="post">
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required><br>
+
+    <label for="weight">Weight (kg):</label>
+    <input type="number" id="weight" name="weight" required><br>
+
+    <label for="sex">Sex:</label>
+    <select id="sex" name="sex" required>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select><br>
+
+    <label for="exercise_frequency">How often do you exercise?</label>
+    <select id="exercise_frequency" name="exercise_frequency" required>
+        <option value="every_day">Every day</option>
+        <option value="1_to_2_times">1 to 2 times a week</option>
+        <option value="2_to_3_times">2 to 3 times a week</option>
+        <option value="3_to_4_times">3 to 4 times a week</option>
+        <option value="5_to_6_times">5 to 6 times a week</option>
+        <option value="never">Never</option>
+    </select><br>
+
+
+    <label for="time_preference">What time do you prefer for exercise?</label>
+    <select id="time_preference" name="time_preference" required>
+        <option value="Early morning">Early morning</option>
+        <option value="afternoon">afternoon</option>
+        <option value="evening">evening</option>
+    </select><br>
+
+    <label for="exercise_duration">How long do you spend exercising per day?</label>
+    <select id="exercise_duration" name="exercise_duration" required>
+        <option value="30_min">30 minutes</option>
+        <option value="1_hour">1 hour</option>
+        <option value="2_hours">2 hours</option>
+        <option value="3_hours_above">3 hours and above</option>
+        <option value="no_exercise">I don't really exercise</option>
+    </select><br>
+
+
+    <label for="healthy_diet">Would you say you eat a healthy balanced diet?</label>
+    <select id="healthy_diet" name="healthy_diet" required>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+        <option value="not_always">Not always</option>
+    </select><br>
+
+    <label for="diet_barriers">What prevents you from eating a healthy balanced diet? (Select all that
+        applies)</label><br>
+    <input type="checkbox" id="diet_lack_of_time" name="diet_barriers" value="lack_of_time">
+    <label for="diet_lack_of_time">Lack of time</label><br>
+
+    <input type="checkbox" id="diet_cost" name="diet_barriers" value="cost">
+    <label for="diet_cost">Cost</label><br>
+
+    <input type="checkbox" id="diet_access_to_fast_food" name="diet_barriers" value="access_to_fast_food">
+    <label for="diet_access_to_fast_food">Ease of access to fast food</label><br>
+
+    <input type="checkbox" id="diet_temptation_cravings" name="diet_barriers" value="temptation_cravings">
+    <label for="diet_temptation_cravings">Temptation and cravings</label><br>
+
+    <input type="checkbox" id="diet_balanced_diet" name="diet_barriers" value="balanced_diet">
+    <label for="diet_balanced_diet">I have a balanced diet</label><br>
+
+    <label for="exercise_preferences">What is your preferred form of exercise? (Select one)</label><br>
+
+    <input type="radio" id="exercise_walking_jogging" name="exercise_preferences" value="walking_jogging">
+    <label for="exercise_walking_jogging">Walking or jogging</label><br>
+
+    <input type="radio" id="exercise_gym" name="exercise_preferences" value="gym">
+    <label for="exercise_gym">Gym</label><br>
+
+    <input type="radio" id="exercise_swimming" name="exercise_preferences" value="swimming">
+    <label for="exercise_swimming">Swimming</label><br>
+
+    <input type="radio" id="exercise_yoga" name="exercise_preferences" value="yoga">
+    <label for="exercise_yoga">Yoga</label><br>
+
+    <input type="radio" id="exercise_zumba_dance" name="exercise_preferences" value="zumba_dance">
+    <label for="exercise_zumba_dance">Zumba dance</label><br>
+
+    <input type="radio" id="exercise_lifting_weights" name="exercise_preferences" value="lifting_weights">
+    <label for="exercise_lifting_weights">Lifting weights</label><br>
+
+    <input type="radio" id="exercise_team_sport" name="exercise_preferences" value="team_sport">
+    <label for="exercise_team_sport">Team sport</label><br>
+
+    <input type="radio" id="exercise_no_exercise" name="exercise_preferences" value="no_exercise">
+    <label for="exercise_no_exercise">I don't really exercise</label><br>
+
+
+    <label for="exercise_motivation">What motivates you to exercise? (Select all that applies)</label><br>
+    <input type="checkbox" id="motivation_be_fit" name="exercise_motivation" value="be_fit">
+    <label for="motivation_be_fit">I want to be fit</label><br>
+
+    <input type="checkbox" id="motivation_increase_strength" name="exercise_motivation" value="increase_strength">
+    <label for="motivation_increase_strength">I want to increase muscle mass and strength</label><br>
+
+    <input type="checkbox" id="motivation_lose_weight" name="exercise_motivation" value="lose_weight">
+    <label for="motivation_lose_weight">I want to lose weight</label><br>
+
+    <input type="checkbox" id="motivation_be_flexible" name="exercise_motivation" value="be_flexible">
+    <label for="motivation_be_flexible">I want to be flexible</label><br>
+
+    <input type="checkbox" id="motivation_relieve_stress" name="exercise_motivation" value="relieve_stress">
+    <label for="motivation_relieve_stress">I want to relieve stress</label><br>
+
+    <input type="checkbox" id="motivation_achieve_goal" name="exercise_motivation" value="achieve_goal">
+    <label for="motivation_achieve_goal">I want to achieve a sporting goal</label><br>
+
+    <input type="checkbox" id="motivation_not_interested" name="exercise_motivation" value="not_interested">
+    <label for="motivation_not_interested">I'm not really interested in exercising</label><br>
+
+
+    <!-- The rest of your form -->
+
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

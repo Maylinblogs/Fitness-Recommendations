@@ -1,0 +1,2 @@
+Age,Weight,Sex,Exercise_Frequency,Time_Preference,Exercise_Duration,Healthy_Diet,Diet_Barriers,Exercise_Motivation,Exercise_Preference
+44,44.0,male,every_day,Early morning,30_min,yes,lack_of_time,relieve_stress,"['alone', 'with_group']"
